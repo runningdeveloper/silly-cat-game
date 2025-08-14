@@ -11,7 +11,9 @@ import {
 
 let { canvas } = init();
 
-setImagePath("/images/");
+// Set image path based on environment (production vs development)
+const imagePath = import.meta.env.PROD ? "/silly-cat-game/images/" : "/images/";
+setImagePath(imagePath);
 
 load("eyes4.png").then(function () {
   // Game settings
