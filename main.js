@@ -241,8 +241,7 @@ load("eyes4.png").then(function () {
             } on the side without eyes! Score: ${score}`
           );
         } else {
-          score -= 1;
-          // Flash red for wrong side
+          // Flash red for wrong side but don't subtract points
           screenFlashColor = "rgba(255, 0, 0, 0.3)";
           flashDuration = FLASH_TIME;
           console.log(
@@ -254,9 +253,8 @@ load("eyes4.png").then(function () {
       }
     });
 
-    // If no cat was hit, deduct points
+    // If no cat was hit, flash red but don't subtract points
     if (!hitCat) {
-      score -= 1;
       // Flash red for miss
       screenFlashColor = "rgba(255, 0, 0, 0.3)";
       flashDuration = FLASH_TIME;
