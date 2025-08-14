@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
+  base: process.env.NODE_ENV === "production" ? "/silly-cat-game/" : "/",
   publicDir: "public", // Explicitly set the public directory
   build: {
     target: "es2023", // Updated to ES2023 for 2025
